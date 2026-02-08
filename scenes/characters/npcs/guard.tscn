@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cvv2fl2mp4jhc"]
+
+[ext_resource type="Script" uid="uid://3b5gtp3xdxqk" path="res://scripts/characters/npc/guard.gd" id="1_lp7bc"]
+[ext_resource type="Texture2D" uid="uid://dmr6a3rkb0s0k" path="res://assets/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Idle.png" id="1_lql04"]
+[ext_resource type="Texture2D" uid="uid://d33bi52wuxa04" path="res://assets/ui/tilemap.png" id="2_0w6qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w6qr"]
+atlas = ExtResource("1_lql04")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp7bc"]
+atlas = ExtResource("1_lql04")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er1xk"]
+atlas = ExtResource("1_lql04")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf7p3"]
+atlas = ExtResource("1_lql04")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6n6p"]
+atlas = ExtResource("1_lql04")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx3do"]
+atlas = ExtResource("1_lql04")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs18u"]
+atlas = ExtResource("1_lql04")
+region = Rect2(1920, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x88i8"]
+atlas = ExtResource("1_lql04")
+region = Rect2(2240, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg1ue"]
+atlas = ExtResource("1_lql04")
+region = Rect2(2560, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g40or"]
+atlas = ExtResource("1_lql04")
+region = Rect2(2880, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ao2i"]
+atlas = ExtResource("1_lql04")
+region = Rect2(3200, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2k0a"]
+atlas = ExtResource("1_lql04")
+region = Rect2(3520, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0ykh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w6qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp7bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er1xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf7p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6n6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx3do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs18u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x88i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg1ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g40or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ao2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2k0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ul0"]
+radius = 20.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch7sm"]
+size = Vector2(46, 124.5)
+
+[node name="Guard" type="CharacterBody2D" unique_id=610737522]
+script = ExtResource("1_lp7bc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1637354765]
+sprite_frames = SubResource("SpriteFrames_b0ykh")
+autoplay = "default"
+frame_progress = 0.9223344
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809159423]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_i4ul0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1078619484]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=475256329]
+position = Vector2(0, 50.75)
+shape = SubResource("RectangleShape2D_ch7sm")
+
+[node name="btn_sprite" type="Sprite2D" parent="." unique_id=1170257598]
+position = Vector2(0, -63)
+scale = Vector2(2, 2)
+texture = ExtResource("2_0w6qr")
+region_enabled = true
+region_rect = Rect2(357, 51, 15, 16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://clkwnrilb17aj"]
+
+[ext_resource type="Script" uid="uid://l6gb5sa2w2ml" path="res://scripts/introduction.gd" id="1_e7oap"]
+[ext_resource type="Texture2D" uid="uid://b882x7qh6uict" path="res://assets/bg/bg001.jpg" id="2_k15ss"]
+[ext_resource type="FontFile" uid="uid://dc451uhpg2re5" path="res://fonts/Pixellari.ttf" id="2_nvvsg"]
+[ext_resource type="PackedScene" uid="uid://bdpj1jwp86vya" path="res://scenes/ui/topbanner.tscn" id="3_e7oap"]
+[ext_resource type="PackedScene" uid="uid://d1vjl8cgjn33l" path="res://scenes/ui/btn.tscn" id="3_nvvsg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvvsg"]
+font = ExtResource("2_nvvsg")
+font_size = 80
+
+[node name="introduction" type="Control" unique_id=947430971]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7oap")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1687480185]
+layout_mode = 0
+offset_right = 1384.0
+offset_bottom = 721.0
+texture = ExtResource("2_k15ss")
+
+[node name="topbanner" parent="." unique_id=921575582 instance=ExtResource("3_e7oap")]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 109.99999
+offset_right = 394.0
+offset_bottom = 150.0
+
+[node name="btn_container" type="VBoxContainer" parent="." unique_id=388529196]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -14.0
+offset_right = 200.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="play" parent="btn_container" unique_id=966588193 instance=ExtResource("3_nvvsg")]
+layout_mode = 2
+text = "Play"
+
+[node name="exit" parent="btn_container" unique_id=2121156117 instance=ExtResource("3_nvvsg")]
+layout_mode = 2
+text = "Exit"
+
+[node name="title" type="Label" parent="." unique_id=428187480]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 136.0
+offset_right = 1049.0
+offset_bottom = 216.0
+text = "The Fog of Mirsharai"
+label_settings = SubResource("LabelSettings_nvvsg")
+horizontal_alignment = 1

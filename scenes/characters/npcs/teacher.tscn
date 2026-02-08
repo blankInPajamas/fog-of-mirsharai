@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dilq4o41rir1o"]
+
+[ext_resource type="Script" uid="uid://b8ln8ufho4en0" path="res://scripts/characters/npc/teacher.gd" id="1_3fwq0"]
+[ext_resource type="Texture2D" uid="uid://c1vfeu5fa1wel" path="res://assets/Mini_Characters/char_42.png" id="1_ny6kh"]
+[ext_resource type="Texture2D" uid="uid://d33bi52wuxa04" path="res://assets/ui/tilemap.png" id="2_mskw2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ul0"]
+radius = 20.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch7sm"]
+size = Vector2(46, 124.5)
+
+[node name="Teacher" type="CharacterBody2D" unique_id=610737522]
+script = ExtResource("1_3fwq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=300052055]
+position = Vector2(0, 5)
+scale = Vector2(3.7812498, 3.7812498)
+texture = ExtResource("1_ny6kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809159423]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_i4ul0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1078619484]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=475256329]
+position = Vector2(0, 50.75)
+shape = SubResource("RectangleShape2D_ch7sm")
+
+[node name="btn_sprite" type="Sprite2D" parent="." unique_id=684343433]
+position = Vector2(0, -63)
+scale = Vector2(2, 2)
+texture = ExtResource("2_mskw2")
+region_enabled = true
+region_rect = Rect2(357, 51, 15, 16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

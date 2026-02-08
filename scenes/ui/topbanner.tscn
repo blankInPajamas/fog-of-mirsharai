@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bdpj1jwp86vya"]
+
+[ext_resource type="Texture2D" uid="uid://ch365bxbe3gjx" path="res://assets/Tiny Swords (Free Pack)/UI Elements/UI Banners from the store page/Ribbons/Ribbon_Blue.png" id="1_q3sd6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nvvsg"]
+load_path = "res://.godot/imported/Ribbon_Blue.png-dc47512e0db28ab78bf5559041c2fa04.ctex"
+
+[node name="topbanner" type="HBoxContainer" unique_id=921575582]
+offset_left = 41.0
+offset_top = 104.99999
+offset_right = 389.0
+offset_bottom = 145.0
+scale = Vector2(3.5, 3.5)
+theme_override_constants/separation = -1
+
+[node name="left" type="NinePatchRect" parent="." unique_id=2105519486]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("1_q3sd6")
+region_rect = Rect2(29.033604, 21.5136, 99.96835, 97.92598)
+
+[node name="middle" type="NinePatchRect" parent="." unique_id=150119134]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_nvvsg")
+region_rect = Rect2(191.864, 22.073, 63.615, 97)
+
+[node name="right" type="NinePatchRect" parent="." unique_id=1166326490]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("1_q3sd6")
+region_rect = Rect2(319.14505, 22.38115, 109.67044, 96.21928)

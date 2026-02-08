@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d307rbriijf6v"]
+
+[ext_resource type="Texture2D" uid="uid://danje5qqslwnx" path="res://assets/Tiny Swords (Free Pack)/Terrain/Tileset/Water Foam.png" id="1_xslpr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twe1e"]
+atlas = ExtResource("1_xslpr")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsvlv"]
+atlas = ExtResource("1_xslpr")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7652"]
+atlas = ExtResource("1_xslpr")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evfmj"]
+atlas = ExtResource("1_xslpr")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gudj"]
+atlas = ExtResource("1_xslpr")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nfrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twe1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsvlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7652")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evfmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gudj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="foam" type="AnimatedSprite2D" unique_id=777318076]
+sprite_frames = SubResource("SpriteFrames_5nfrc")
+autoplay = "default"
+frame_progress = 0.9428336

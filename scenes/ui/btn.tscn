@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d1vjl8cgjn33l"]
+
+[ext_resource type="FontFile" uid="uid://dc451uhpg2re5" path="res://fonts/Pixellari.ttf" id="1_h04ci"]
+[ext_resource type="Texture2D" uid="uid://c02ieomxt6bkl" path="res://assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="2_8t7ph"]
+[ext_resource type="Texture2D" uid="uid://c5psku6c4j6ue" path="res://assets/Tiny Swords (Free Pack)/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Pressed.png" id="3_wxyf8"]
+[ext_resource type="Script" uid="uid://p4ayaux6gb3x" path="res://scripts/ui/btn.gd" id="4_8t7ph"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvvsg"]
+texture = ExtResource("2_8t7ph")
+texture_margin_left = 15.0
+texture_margin_top = 5.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+region_rect = Rect2(17.280487, 16.24303, 93.35882, 96.89067)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xofpe"]
+texture = ExtResource("3_wxyf8")
+texture_margin_left = 15.0
+texture_margin_top = 10.223099
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+region_rect = Rect2(12.747936, 27.884735, 101.5022, 86.18112)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7oap"]
+
+[node name="play" type="Button" unique_id=966588193]
+custom_minimum_size = Vector2(0, 100)
+theme_override_fonts/font = ExtResource("1_h04ci")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_nvvsg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xofpe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xofpe")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e7oap")
+script = ExtResource("4_8t7ph")

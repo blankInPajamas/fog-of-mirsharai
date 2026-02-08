@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://5fucfi3bahhe"]
+
+[ext_resource type="Texture2D" uid="uid://dtyr5484efbct" path="res://assets/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Monastery.png" id="1_nv263"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxole"]
+size = Vector2(87.83417, 138.11676)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q1bt"]
+size = Vector2(114, 205.38464)
+
+[node name="house1" type="StaticBody2D" unique_id=1264835789]
+scale = Vector2(1.3, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=986194906]
+texture = ExtResource("1_nv263")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1111636846]
+z_index = 1
+position = Vector2(-1.0270272, 78.84617)
+scale = Vector2(1.372081, 0.87439966)
+shape = SubResource("RectangleShape2D_dxole")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2009714468]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1013153874]
+position = Vector2(-1, 122.69233)
+shape = SubResource("RectangleShape2D_6q1bt")

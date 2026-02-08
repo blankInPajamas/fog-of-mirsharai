@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://u8cu4euexyl5"]
+
+[ext_resource type="Texture2D" uid="uid://c4wbovmyi0d6d" path="res://assets/Tiny Swords (Free Pack)/Units/Black Units/Monk/Idle.png" id="1_ch7sm"]
+[ext_resource type="Script" uid="uid://dquvgch1q521b" path="res://scripts/characters/npc/priest.gd" id="1_puu7m"]
+[ext_resource type="Texture2D" uid="uid://d33bi52wuxa04" path="res://assets/ui/tilemap.png" id="2_wo38v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxpjc"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v0ef"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqksw"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3brc"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8rsg"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcgbf"]
+atlas = ExtResource("1_ch7sm")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0ykh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxpjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v0ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqksw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3brc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8rsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcgbf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ul0"]
+radius = 20.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch7sm"]
+size = Vector2(46, 124.5)
+
+[node name="Priest" type="CharacterBody2D" unique_id=610737522]
+script = ExtResource("1_puu7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1637354765]
+sprite_frames = SubResource("SpriteFrames_b0ykh")
+autoplay = "default"
+frame_progress = 0.68492097
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=809159423]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_i4ul0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1078619484]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=475256329]
+position = Vector2(0, 50.75)
+shape = SubResource("RectangleShape2D_ch7sm")
+
+[node name="btn_sprite" type="Sprite2D" parent="." unique_id=647539327]
+position = Vector2(0, -63)
+scale = Vector2(2, 2)
+texture = ExtResource("2_wo38v")
+region_enabled = true
+region_rect = Rect2(357, 51, 15, 16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

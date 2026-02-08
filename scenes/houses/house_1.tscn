@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bddufnq44riok"]
+
+[ext_resource type="Texture2D" uid="uid://rep61omgcti" path="res://assets/Tiny Swords (Free Pack)/Buildings/Blue Buildings/House1.png" id="1_dxole"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q1bt"]
+size = Vector2(114, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxole"]
+size = Vector2(82, 113)
+
+[node name="house1" type="StaticBody2D" unique_id=1264835789]
+scale = Vector2(1.6, 1.6)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2009714468]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1013153874]
+position = Vector2(-1, 73)
+shape = SubResource("RectangleShape2D_6q1bt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=986194906]
+texture = ExtResource("1_dxole")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1111636846]
+z_index = 1
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_dxole")

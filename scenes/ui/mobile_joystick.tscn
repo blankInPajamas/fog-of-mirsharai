@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ba60p8j3shs8q"]
+
+[ext_resource type="Script" uid="uid://d2hxf2nqx7heg" path="res://scripts/joystick/mobile_joystick.gd" id="1_0r5iy"]
+[ext_resource type="Texture2D" uid="uid://d33bi52wuxa04" path="res://assets/ui/tilemap.png" id="1_pgj0n"]
+
+[node name="mobile_joystick" type="CanvasLayer" unique_id=1421269759]
+script = ExtResource("1_0r5iy")
+
+[node name="btn_container" type="HBoxContainer" parent="." unique_id=1051159176]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.999996
+offset_top = -304.0
+offset_right = 390.0
+offset_bottom = 36.0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="row1" type="VBoxContainer" parent="btn_container" unique_id=1221353614]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="up" type="NinePatchRect" parent="btn_container/row1" unique_id=517799615]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture = ExtResource("1_pgj0n")
+region_rect = Rect2(153.38872, 375, 14.7157135, 14.474182)
+
+[node name="up_btn" type="Button" parent="btn_container/row1/up" unique_id=1405940355]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 0.7999916
+offset_right = 153.75
+offset_bottom = 150.0
+
+[node name="left" type="NinePatchRect" parent="btn_container/row1" unique_id=783670156]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture = ExtResource("1_pgj0n")
+region_rect = Rect2(205, 375, 14, 14)
+
+[node name="left_btn" type="Button" parent="btn_container/row1/left" unique_id=843871346]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 151.25
+offset_bottom = 150.0
+
+[node name="row2" type="VBoxContainer" parent="btn_container" unique_id=1304625463]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="down" type="NinePatchRect" parent="btn_container/row2" unique_id=621422215]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture = ExtResource("1_pgj0n")
+region_rect = Rect2(188, 375, 14, 14)
+
+[node name="down_btn" type="Button" parent="btn_container/row2/down" unique_id=1125618212]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 152.5
+offset_bottom = 148.75
+
+[node name="right" type="NinePatchRect" parent="btn_container/row2" unique_id=1894202737]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+texture = ExtResource("1_pgj0n")
+region_rect = Rect2(171, 375, 14, 14)
+
+[node name="right_btn" type="Button" parent="btn_container/row2/right" unique_id=1198838401]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 151.25
+
+[node name="interact" type="NinePatchRect" parent="." unique_id=746558633]
+offset_left = 1057.0
+offset_top = 508.0
+offset_right = 1097.0
+offset_bottom = 548.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_pgj0n")
+region_rect = Rect2(476, 340, 16, 16)
+
+[node name="int_btn" type="Button" parent="interact" unique_id=146878747]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.8
+offset_bottom = 39.999996
+
+[connection signal="button_down" from="btn_container/row1/up/up_btn" to="." method="_on_up_btn_button_down"]
+[connection signal="button_up" from="btn_container/row1/up/up_btn" to="." method="_on_up_btn_button_up"]
+[connection signal="button_down" from="btn_container/row1/left/left_btn" to="." method="_on_left_btn_button_down"]
+[connection signal="button_up" from="btn_container/row1/left/left_btn" to="." method="_on_left_btn_button_up"]
+[connection signal="button_down" from="btn_container/row2/down/down_btn" to="." method="_on_down_btn_button_down"]
+[connection signal="button_up" from="btn_container/row2/down/down_btn" to="." method="_on_down_btn_button_up"]
+[connection signal="button_down" from="btn_container/row2/right/right_btn" to="." method="_on_right_btn_button_down"]
+[connection signal="button_up" from="btn_container/row2/right/right_btn" to="." method="_on_right_btn_button_up"]
+[connection signal="button_down" from="interact/int_btn" to="." method="_on_int_btn_button_down"]
+[connection signal="button_up" from="interact/int_btn" to="." method="_on_int_btn_button_up"]

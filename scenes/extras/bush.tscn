@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dyrqpsixrhg7n"]
+
+[ext_resource type="Texture2D" uid="uid://bulyisj3wwc58" path="res://assets/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe3.png" id="1_ykvmc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fviyo"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(0, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6tfs"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(128, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqyux"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(256, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i3q5"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(384, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v7rp"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(512, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q23ms"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(640, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxxnk"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(768, 0, 128, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5icl8"]
+atlas = ExtResource("1_ykvmc")
+region = Rect2(896, 0, 128, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p75n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fviyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6tfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqyux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i3q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v7rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q23ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxxnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5icl8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bush" type="AnimatedSprite2D" unique_id=2091421453]
+sprite_frames = SubResource("SpriteFrames_4p75n")
+autoplay = "default"
+frame_progress = 0.4039971
